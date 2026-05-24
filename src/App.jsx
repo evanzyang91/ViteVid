@@ -1,28 +1,22 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
-
-const Card = ({ title }) => {
-  const [hasLiked, setHasLiked] = useState(false);
-  return (
-    <div className='card'>
-      <h2>{ title }</h2>
-
-      <button onClick={() => {setHasLiked(true)}}>
-        Like
-      </button>
-    </div>
-  )
-}
+import React from 'react'
+import Search from './components/Search.jsx'
 
 const App = () => {
+  const [searchTerm, setSearchTerm] = useState("")
 
   return (
-    <div className="card-container">
-      <Card title="Frankenstein" />
-    </div>
+    <main>
+      <div className="pattern"/>
+      <div className="wrapper">
+        <header>
+          <img className="mt-4" src="./movies-gallery.png" alt="Site Banner"/>
+          <h1>Browse your favourite movies. Built with <span className="text-gradient mt-8">Vite</span>.</h1>
+        </header>
+
+        <Search/>
+      </div>
+    </main>
   )
 }
+
 export default App
