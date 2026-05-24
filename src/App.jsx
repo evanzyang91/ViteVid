@@ -4,9 +4,25 @@ import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
 
-const App = () => {
+const Card = ({ title }) => {
+  const [hasLiked, setHasLiked] = useState(false);
   return (
-    <h2>Functional Arrow Component</h2>
+    <div className='card'>
+      <h2>{ title }</h2>
+
+      <button onClick={() => {setHasLiked(true)}}>
+        Like
+      </button>
+    </div>
+  )
+}
+
+const App = () => {
+
+  return (
+    <div className="card-container">
+      <Card title="Frankenstein" />
+    </div>
   )
 }
 export default App
